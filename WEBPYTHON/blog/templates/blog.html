@@ -1,0 +1,45 @@
+{% extends "pages/base.html" %}
+
+{% block title %}blog{% endblock %}
+
+{% block content %}
+{% for post in Posts %}
+
+ 
+  <div  class="blog" style=" margin-left: 100px;
+  
+  justify-content: center;
+    align-items: center;
+    display: flex;
+  " >
+    <br>
+    {% comment %} <div style = "float: left; width:450px; height:250px;">
+      <img src="{{post.avatar}}"alt="" style= "width:170px; height:170px; border-radius: 50%;"> 
+       </div> {% endcomment %}
+       <div style = " width:200px; height:250px;">
+      <img src="{{post.image.url}}"alt="" style= "width:180px; height:180px; "> 
+       </div>
+      
+      <div style = " width:450px; height:250px;">
+      <h4>
+      <a href="/blog/{{post.id}}" style="text-decoration: none;">{{post.title}}</a>
+      </h4>
+      <h4 style= "color: grey; font-size: 20px;">{{post.date|date:"d-m-Y"}}</h4>
+
+      <h6 style="font-style: italic; text-decoration: none;">
+      <a href="/blog/{{post.id}}" style="text-decoration: none;">{{post.email_page}}</a>
+      </h6>
+      <h6>
+      <a href="/blog/{{post.id}}" style="text-decoration: none;">{{post.author}}</a>
+      </h6>
+       <p>
+      <a class="decoration" style="text-decoration: none;"> Ngôn ngữ lập trình <html> của ngành công nghệ thông tin  <html> </html>. Mà bạn nên tìm hiểu.</a>
+      </p>
+    </div>
+    {% comment %} </div> {% endcomment %}
+  </div>
+ 
+
+{% endfor %}
+
+{% endblock %}  
